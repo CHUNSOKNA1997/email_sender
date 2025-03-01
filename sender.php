@@ -22,22 +22,22 @@
 
             // sender's mail
             $mail->Username = 'hshi38612@gmail.com';
-            $mail->Password = 'luja yjad jmdk asdl';
+            $mail->Password = 'migv uyrp ocow xefa';
 
-            $mail->setFrom("hshi38612@gmail.com", "Contact Form");
+            $mail->setFrom($mail->Username, "Contact Form");
             $mail->addReplyTo($email, $name);
 
             // reciever's mail
-            $mail->addAddress("chunsokna69@gmail.com");
+            $mail->addAddress("chunratana2017@gmail.com");
 
             $mail->Subject = $subject;
             $mail->Body = $message;
 
             $mail->send();
 
-            echo "Successfully sent message";
+            echo "<script>alert('Message sent successfully!');</script>";
 
         }catch(Exception $e){
-            echo "Mail error{$mail->ErrorInfo}";
+            echo "<script>alert('Mail error: " . $mail->ErrorInfo . "');</script>";
         }
     }
