@@ -1,3 +1,5 @@
+<?php include("sender.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

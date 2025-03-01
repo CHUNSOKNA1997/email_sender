@@ -16,10 +16,9 @@
             $mail->SMTPAuth = true;
 
 
-            $mail->Host = "smpt.gmail.com";
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port='456';
-
+            $mail->Host = "smtp.gmail.com";
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
 
             // sender's mail
             $mail->Username = 'hshi38612@gmail.com';
@@ -36,9 +35,9 @@
 
             $mail->send();
 
-            $successMail = "Successfully sent message";
+            echo "Successfully sent message";
 
         }catch(Exception $e){
-            $err = "Mail error{$mail->ErrorInfo}";
+            echo "Mail error{$mail->ErrorInfo}";
         }
     }
