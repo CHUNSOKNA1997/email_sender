@@ -17,7 +17,18 @@
 
 
             $mail->Host = "smpt.gmail.com";
-            
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port='456';
+
+
+            // sender's mail
+            $mail->Username = 'hshi38612@gmail.com';
+            $mail->Password = 'luja yjad jmdk asdl';
+
+            $mail->setFrom("hshi38612@gmail.com", "Contact Form");
+            $mail->addReplyTo($email, $name);
+
+            // reciever's mail
 
         }catch(Exception $e){
 
