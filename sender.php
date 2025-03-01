@@ -8,7 +8,7 @@
         $email = $_POST["email"];
         $subject = $_POST["subject"];
         $message = $_POST["message"];
-
+        
         try{
             $mail = new PHPMailer(true);
 
@@ -29,6 +29,14 @@
             $mail->addReplyTo($email, $name);
 
             // reciever's mail
+            $mail->addAddress("chunsokna69@gmail.com");
+
+            $mail->Subject = $subject;
+            $mail->Body = $message;
+
+            $mail->send();
+
+            $successMail = "Successfully sent message";
 
         }catch(Exception $e){
 
