@@ -8,7 +8,7 @@
         $email = $_POST["email"];
         $subject = $_POST["subject"];
         $message = $_POST["message"];
-        
+
         try{
             $mail = new PHPMailer(true);
 
@@ -39,6 +39,6 @@
             $successMail = "Successfully sent message";
 
         }catch(Exception $e){
-
+            $err = "Mail error{$mail->ErrorInfo}";
         }
     }
